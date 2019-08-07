@@ -24,5 +24,4 @@ class Dice extends Component {
   }
 }
 
-
 export default Dice;
