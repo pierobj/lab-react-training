@@ -11,6 +11,8 @@ import ClickablePicture from './Components/ClickablePicture.js';
 import Dice from './Components/Dice.js';
 import NumbersTable from './Components/NumbersTable.js';
 import FaceBook from './Components/FaceBook.js';
+import SignupPage from './Components/SignupPage';
+import RGBColorPicker from './Components/RGBColorPicker';
 
 
 class App extends Component {
@@ -120,6 +122,11 @@ class App extends Component {
 <h1>Facebook</h1>
 <FaceBook />
 
+<h2>Signup page</h2>
+<SignupPage />
+
+<h2>Color range</h2>
+<RGBColorPicker />
   </div>
     )
   }

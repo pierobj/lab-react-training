@@ -8,7 +8,6 @@ class FaceBook extends Component {
   state = { country: null }
   allCountries = profiles.reduce((res, current) => {
     if (!res.includes(current.country)) res.push(current.country);
-    console.log(current, res);
     return res;
   }, []) 
 

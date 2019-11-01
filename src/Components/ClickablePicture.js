@@ -8,7 +8,6 @@ class ClickablePicture extends Component {
   };
 }
   render() {
-    console.log(this.rops);
     const {img, imgClicked} = this.props;
     return (
       <img src={this.state.clicked ? imgClicked : img} onClick={() => {
