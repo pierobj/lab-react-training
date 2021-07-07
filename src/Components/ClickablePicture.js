@@ -1,22 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class ClickablePicture extends Component {
-  state = {
-    src: this.props.img,
-  }
-
-  changePic = () => {
-    const { src } = this.state;
-    const { img, imgClicked } = this.props;
-    let newSrc = (src === img) ? imgClicked : img;
-    this.setState({
-      src: newSrc
-    })
+  constructor(props) {
+    super(props);
+    this.state = {
+      clicked: false
   };
-
+}
   render() {
+    const {img, imgClicked} = this.props;
     return (
-      <img onClick={this.changePic} src={this.state.src} alt={'click to change'}/>
+      <img src={this.state.clicked ? imgClicked : img} onClick={() => {
+        if (this.state.clicked) {
+          this.setState({
+            clicked: false
+          });
+        } else {
+            this.setState({
+              clicked: true
+          });
+        }
+      }
+      } alt='face'/>
     )
   }
 }

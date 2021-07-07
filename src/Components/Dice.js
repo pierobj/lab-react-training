@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+
 
 class Dice extends Component {
-  state = {
-    initial: (Math.floor(Math.random() * (6 - 1 + 1)) + 1),
+ 
+  constructor(props){
+    super(props);
+    this.state = { imageIndex: this.randomIntegerInRange(1, 6) };
   }
 
-  changeDice = () => {
-    this.setState({
-      initial: '-empty'
-    })
-    setTimeout(() => {
-      this.setState({
-        initial: (Math.floor(Math.random() * (6 - 1 + 1)) + 1)
-      })
-    }, 1000);
-  };
+  randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
+  handleClick = () => {
+    this.setState({imageIndex: '-empty'});
+    setTimeout( () => {
+      this.setState({imageIndex: this.randomIntegerInRange(1, 6)})
+    }, 1000)
+  }
+  
   render() {
     return (
-      <img onClick={this.changeDice} src={`/img/dice${this.state.initial}.png`} alt={'click to change'} width={150}/>
+      <img src={`/img/dice${this.state.imageIndex}.png`} onClick={this.handleClick} alt="dice" width="200px"/>
     )
   }
 }
